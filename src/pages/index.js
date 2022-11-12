@@ -29,25 +29,25 @@ const Page = () => (
           container
           spacing={3}
         >
-          <Grid
+             <Grid
             item
-            lg={3}
+            lg={4}
             sm={6}
-            xl={3}
+            xl={4}
             xs={12}
           >
             <Budget />
           </Grid>
           <Grid
             item
-            xl={3}
-            lg={3}
+            xl={4}
+            lg={4}
             sm={6}
             xs={12}
           >
             <TotalCustomers />
           </Grid>
-          <Grid
+          {/* <Grid
             item
             xl={3}
             lg={3}
@@ -55,33 +55,15 @@ const Page = () => (
             xs={12}
           >
             <TasksProgress />
-          </Grid>
+          </Grid> */}
           <Grid
             item
-            xl={3}
-            lg={3}
+            xl={4}
+            lg={4}
             sm={6}
             xs={12}
           >
             <TotalProfit sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <Sales />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <TrafficByDevice sx={{ height: '100%' }} />
           </Grid>
           <Grid
             item
@@ -101,6 +83,25 @@ const Page = () => (
           >
             <LatestOrders />
           </Grid>
+          <Grid
+            item
+            lg={8}
+            md={12}
+            xl={9}
+            xs={12}
+          >
+            <Sales />
+          </Grid>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            xl={3}
+            xs={12}
+          >
+            <TrafficByDevice sx={{ height: '100%' }} />
+          </Grid>
+  
         </Grid>
       </Container>
     </Box>
