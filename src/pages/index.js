@@ -1,16 +1,28 @@
+import React, { useState } from 'react';
+
 import Head from 'next/head';
 import { Box, Container, Grid } from '@mui/material';
-import { Budget } from '../components/dashboard/budget';
-import { LatestOrders } from '../components/dashboard/latest-orders';
-import { LatestProducts } from '../components/dashboard/latest-products';
+import { Distance } from '../components/dashboard/budget';
+import { MesTrajets } from '../components/dashboard/latest-orders';
+import { MesVoitures } from '../components/dashboard/latest-products';
 import { Sales } from '../components/dashboard/sales';
 import { TasksProgress } from '../components/dashboard/tasks-progress';
-import { TotalCustomers } from '../components/dashboard/total-customers';
-import { TotalProfit } from '../components/dashboard/total-profit';
+import { Carburant } from '../components/dashboard/total-customers';
+import { MaxSpeed } from '../components/dashboard/total-profit';
 import { TrafficByDevice } from '../components/dashboard/traffic-by-device';
 import { DashboardLayout } from '../components/dashboard-layout';
+import { Bar } from 'react-chartjs-2';
+import {  Button,Card, CardContent, CardHeader, Divider } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+// import Swal from "sweetalert2/src/sweetalert2";
+import Modal from 'react-bootstrap/Modal';
 
-const Page = () => (
+const Page = () => {
+
+
+
+return(
   <>
     <Head>
       <title>
@@ -36,7 +48,7 @@ const Page = () => (
             xl={4}
             xs={12}
           >
-            <Budget />
+            <Distance />
           </Grid>
           <Grid
             item
@@ -45,7 +57,7 @@ const Page = () => (
             sm={6}
             xs={12}
           >
-            <TotalCustomers />
+            <Carburant />
           </Grid>
           {/* <Grid
             item
@@ -63,7 +75,7 @@ const Page = () => (
             sm={6}
             xs={12}
           >
-            <TotalProfit sx={{ height: '100%' }} />
+            <MaxSpeed sx={{ height: '100%' }} />
           </Grid>
           <Grid
             item
@@ -72,7 +84,7 @@ const Page = () => (
             xl={3}
             xs={12}
           >
-            <LatestProducts sx={{ height: '100%' }} />
+            <MesVoitures sx={{ height: '100%' }} />
           </Grid>
           <Grid
             item
@@ -81,8 +93,16 @@ const Page = () => (
             xl={9}
             xs={12}
           >
-            <LatestOrders />
+            <MesTrajets />
           </Grid>
+          
+          
+
+       
+ 
+        
+          
+          
           <Grid
             item
             lg={8}
@@ -92,6 +112,7 @@ const Page = () => (
           >
             <Sales />
           </Grid>
+
           <Grid
             item
             lg={4}
@@ -105,8 +126,8 @@ const Page = () => (
         </Grid>
       </Container>
     </Box>
-  </>
-);
+  </>)
+};
 
 Page.getLayout = (page) => (
   <DashboardLayout>

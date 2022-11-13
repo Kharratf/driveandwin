@@ -16,7 +16,8 @@ import {
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { SeverityPill } from '../severity-pill';
-
+import { useEffect, useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 const orders = [
 
   {
@@ -25,7 +26,7 @@ const orders = [
     carburant: 1.44,
     depart:"Sfax",
     arrivee:"Sfax",
-    date: 1555016400000,
+    date: "11/09/2022",
     distance: 18
   },
   {
@@ -34,8 +35,9 @@ const orders = [
     carburant: 11.09,
     depart:"Sfax",
     arrivee:"Sousse",
-    date: 1554930000000,
+    date: "10/09/2022",
     distance: 138.6
+     
 
   },
   {
@@ -44,7 +46,7 @@ const orders = [
     carburant: 12.2,
     depart:"Sousse",
     arrivee:"Tunis",
-    date: 1554757200000,
+    date: "08/09/2022",
     distance: 152.4
 
   },
@@ -54,14 +56,84 @@ const orders = [
     carburant: 21.5,
     depart:"Tunis",
     arrivee:"Sfax",
-    date: 1554670800000,
+    date: "07/09/2022",
     distance: 268.2
 
   },
 
 ];
 
-export const LatestOrders = (props) => (
+ const TrajetsDetailsModal = (props) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+  useEffect(()=>{
+if(props.showModal){
+  setShow(true)
+}
+  },[props.showModal])
+
+  return(
+
+ 
+  <Modal show={show} onHide={handleClose}
+  size="lg"
+  aria-labelledby="contained-modal-title-vcenter"
+  centered
+>
+  <Modal.Header closeButton>
+    <Modal.Title>Détails du trajet</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <div style={{marginLeft:"25%"}}>
+      <strong>Matricule</strong> &ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>124 TN 5456	</span>
+    </div>
+    <div style={{marginLeft:"25%"}}>
+
+      <strong>Départ</strong> &ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>Sfax </span>
+    </div>
+    
+    <div style={{marginLeft:"25%"}}>
+      <strong>Arrivée</strong> &ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>Sousse  </span>
+    </div> 
+    <div style={{marginLeft:"25%"}}>
+      <strong>Date</strong> &ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>10/09/2022</span>
+    </div>
+    <div style={{marginLeft:"25%"}}>
+      <strong>Distance</strong> &ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>138.6 km</span>
+    </div>
+    <div style={{marginLeft:"25%"}}>
+      <strong>Carburant</strong> &ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>11.09 L</span>
+    </div>
+
+    <div style={{marginLeft:"25%"}}>
+      <strong>Vitesse maximale</strong>&ensp;&ensp;&ensp;&ensp;<span style={{float:"right",marginRight:"35%"}}>128 km/h </span>
+    </div>
+    <div style={{marginLeft:"25%"}}>
+      <strong>Température Ext</strong>&ensp;&ensp;&ensp;&ensp;  <span style={{float:"right",marginRight:"35%"}}>31 °C</span>
+    </div>
+    <div style={{marginLeft:"25%"}}>
+      <strong>Taux initial du carburant</strong>&ensp;&ensp;&ensp;&ensp; <span style={{float:"right",marginRight:"35%"}}>83%</span>
+    </div>
+    <div style={{marginLeft:"25%"}}>
+      <strong>Taux final du carburant</strong>&ensp;&ensp;&ensp;&ensp; <span style={{float:"right",marginRight:"35%"}}>23%</span>
+    </div>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button variant="secondary" onClick={handleClose}>
+      Fermer
+    </Button>
+
+  </Modal.Footer>
+</Modal>
+)};
+export const MesTrajets = (props) => {
+  const [showModal, setShowModal] = useState(false);
+
+  return(
+<>
+  <TrajetsDetailsModal showModal={showModal} />
   <Card {...props}>
     <CardHeader title="Mes trajets" />
     <PerfectScrollbar>
@@ -94,7 +166,9 @@ export const LatestOrders = (props) => (
               <TableRow
                 hover
                 key={order.id}
+                onClick={()=>setShowModal(true)}
               >
+                
            <TableCell>
                   {order.matricule}
                 </TableCell>
@@ -112,7 +186,7 @@ export const LatestOrders = (props) => (
 
                 </TableCell>
                 <TableCell>
-                  {format(order.date, 'dd/MM/yyyy')}
+              { order.date}
                 </TableCell>
               </TableRow>
             ))}
@@ -137,4 +211,5 @@ export const LatestOrders = (props) => (
       </Button>
     </Box>
   </Card>
-);
+  </>
+)};

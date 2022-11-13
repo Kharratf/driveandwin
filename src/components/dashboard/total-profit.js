@@ -2,7 +2,7 @@ import { Avatar, Card, CardContent, Grid, Typography } from '@mui/material';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import SpeedIcon from '@mui/icons-material/Speed';
 
-export const TotalProfit = (props) => (
+export const MaxSpeed = (props) => (
   <Card {...props}>
     <CardContent>
       <Grid
@@ -33,7 +33,7 @@ export const TotalProfit = (props) => (
               width: 56
             }}
           >
-            <SpeedIcon />
+            <SpeedIcon   />
           </Avatar>
         </Grid>
       </Grid>

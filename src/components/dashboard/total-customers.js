@@ -2,7 +2,7 @@ import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import PeopleIcon from '@mui/icons-material/PeopleOutlined';
 import EvStationIcon from '@mui/icons-material/EvStation';
-export const TotalCustomers = (props) => (
+export const Carburant = (props) => (
   <Card {...props}>
     <CardContent>
       <Grid
