@@ -11,6 +11,7 @@ import {
 import { Search as SearchIcon } from "../../icons/search";
 import { Upload as UploadIcon } from "../../icons/upload";
 import { Download as DownloadIcon } from "../../icons/download";
+import { ModalAddConducteur } from "./modal";
 
 export const CustomerListToolbar = (props) => (
   <Box {...props}>
@@ -33,9 +34,7 @@ export const CustomerListToolbar = (props) => (
         <Button startIcon={<DownloadIcon fontSize="small" />} sx={{ mr: 1 }}>
           Export
         </Button>
-        <Button color="primary" variant="contained">
-          Ajouter Conducteurs
-        </Button>
+        <ModalAddConducteur />
       </Box>
     </Box>
     <Box sx={{ mt: 3 }}>
