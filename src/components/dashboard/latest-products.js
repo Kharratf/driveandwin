@@ -18,41 +18,36 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 const products = [
   {
     id: uuid(),
-    name: 'Dropbox',
-    imageUrl: '/static/images/products/product_1.png',
-    updatedAt: subHours(Date.now(), 2)
+    name: 'Renault',
+    matricule: '124 TN 5456',
+    modele: "Clio 4"
   },
   {
     id: uuid(),
-    name: 'Medium Corporation',
-    imageUrl: '/static/images/products/product_2.png',
-    updatedAt: subHours(Date.now(), 2)
+    name: 'Renault',
+    matricule: '73 TN 3294',
+    modele: "megane 3"
   },
   {
     id: uuid(),
-    name: 'Slack',
-    imageUrl: '/static/images/products/product_3.png',
-    updatedAt: subHours(Date.now(), 3)
+    name: 'Peaugot',
+    matricule: '124 TN 5456',
+        modele: "301"
   },
   {
     id: uuid(),
-    name: 'Lyft',
-    imageUrl: '/static/images/products/product_4.png',
-    updatedAt: subHours(Date.now(), 5)
+    name: 'Dacia',
+    matricule: '185 TN 8585',
+        modele: "logan"
   },
-  {
-    id: uuid(),
-    name: 'GitHub',
-    imageUrl: '/static/images/products/product_5.png',
-    updatedAt: subHours(Date.now(), 9)
-  }
+
 ];
 
-export const LatestProducts = (props) => (
+export const MesVoitures = (props) => (
   <Card {...props}>
     <CardHeader
       subtitle={`${products.length} in total`}
-      title="Latest Products"
+      title="Mes voitures"
     />
     <Divider />
     <List>
@@ -61,45 +56,19 @@ export const LatestProducts = (props) => (
           divider={i < products.length - 1}
           key={product.id}
         >
-          <ListItemAvatar>
-            <img
-              alt={product.name}
-              src={product.imageUrl}
-              style={{
-                height: 48,
-                width: 48
-              }}
-            />
-          </ListItemAvatar>
+       
           <ListItemText
             primary={product.name}
-            secondary={`Updated ${formatDistanceToNow(product.updatedAt)}`}
+            secondary={`${product.modele}`}
           />
-          <IconButton
-            edge="end"
-            size="small"
-          >
-            <MoreVertIcon />
-          </IconButton>
+           <div>
+            {product.matricule}
+            </div>
+       
         </ListItem>
       ))}
     </List>
     <Divider />
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        p: 2
-      }}
-    >
-      <Button
-        color="primary"
-        endIcon={<ArrowRightIcon />}
-        size="small"
-        variant="text"
-      >
-        View all
-      </Button>
-    </Box>
+
   </Card>
 );

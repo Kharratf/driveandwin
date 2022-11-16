@@ -1,8 +1,9 @@
 import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import MoneyIcon from '@mui/icons-material/Money';
+import RouteIcon from '@mui/icons-material/Route';
 
-export const Budget = (props) => (
+export const Distance = (props) => (
   <Card
     sx={{ height: '100%' }}
     {...props}
@@ -19,13 +20,13 @@ export const Budget = (props) => (
             gutterBottom
             variant="overline"
           >
-            BUDGET
+            Distance/ {new Date().toLocaleString('en-US', {month: 'long'})}
           </Typography>
           <Typography
             color="textPrimary"
             variant="h4"
           >
-            $24k
+            577.2km
           </Typography>
         </Grid>
         <Grid item>
@@ -36,7 +37,7 @@ export const Budget = (props) => (
               width: 56
             }}
           >
-            <MoneyIcon />
+            <RouteIcon />
           </Avatar>
         </Grid>
       </Grid>
@@ -55,13 +56,13 @@ export const Budget = (props) => (
           }}
           variant="body2"
         >
-          12%
+          25km
         </Typography>
         <Typography
           color="textSecondary"
           variant="caption"
         >
-          Since last month
+          % au mois précédent
         </Typography>
       </Box>
     </CardContent>

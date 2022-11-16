@@ -16,128 +16,174 @@ import {
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { SeverityPill } from "../severity-pill";
-
+import { useEffect, useState } from "react";
+import Modal from "react-bootstrap/Modal";
 const orders = [
   {
     id: uuid(),
-    ref: "CDD1049",
-    amount: 30.5,
-    customer: {
-      name: "Ekaterina Tankova",
-    },
-    createdAt: 1555016400000,
-    status: "pending",
+    matricule: "124 TN 5456",
+    carburant: 1.44,
+    depart: "Sfax",
+    arrivee: "Sfax",
+    date: "11/09/2022",
+    distance: 18,
   },
   {
     id: uuid(),
-    ref: "CDD1048",
-    amount: 25.1,
-    customer: {
-      name: "Cao Yu",
-    },
-    createdAt: 1555016400000,
-    status: "delivered",
+    matricule: "124 TN 5456",
+    carburant: 11.09,
+    depart: "Sfax",
+    arrivee: "Sousse",
+    date: "10/09/2022",
+    distance: 138.6,
   },
   {
     id: uuid(),
-    ref: "CDD1047",
-    amount: 10.99,
-    customer: {
-      name: "Alexa Richardson",
-    },
-    createdAt: 1554930000000,
-    status: "refunded",
+    matricule: "124 TN 5456",
+    carburant: 12.2,
+    depart: "Sousse",
+    arrivee: "Tunis",
+    date: "08/09/2022",
+    distance: 152.4,
   },
   {
     id: uuid(),
-    ref: "CDD1046",
-    amount: 96.43,
-    customer: {
-      name: "Anje Keizer",
-    },
-    createdAt: 1554757200000,
-    status: "pending",
-  },
-  {
-    id: uuid(),
-    ref: "CDD1045",
-    amount: 32.54,
-    customer: {
-      name: "Clarke Gillebert",
-    },
-    createdAt: 1554670800000,
-    status: "delivered",
-  },
-  {
-    id: uuid(),
-    ref: "CDD1044",
-    amount: 16.76,
-    customer: {
-      name: "Adam Denisov",
-    },
-    createdAt: 1554670800000,
-    status: "delivered",
+    matricule: "124 TN 5456",
+    carburant: 21.5,
+    depart: "Tunis",
+    arrivee: "Sfax",
+    date: "07/09/2022",
+    distance: 268.2,
   },
 ];
 
-export const LatestOrders = (props) => (
-  <Card {...props}>
-    <CardHeader title="liste des conducteurs" />
-    <PerfectScrollbar>
-      <Box sx={{ minWidth: 800 }}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Order Ref</TableCell>
-              <TableCell>Customer</TableCell>
-              <TableCell sortDirection="desc">
-                <Tooltip enterDelay={300} title="Sort">
-                  <TableSortLabel active direction="desc">
-                    Date
-                  </TableSortLabel>
-                </Tooltip>
-              </TableCell>
-              <TableCell>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {orders.map((order) => (
-              <TableRow hover key={order.id}>
-                <TableCell>{order.ref}</TableCell>
-                <TableCell>{order.customer.name}</TableCell>
-                <TableCell>{format(order.createdAt, "dd/MM/yyyy")}</TableCell>
-                <TableCell>
-                  <SeverityPill
-                    color={
-                      (order.status === "delivered" && "success") ||
-                      (order.status === "refunded" && "error") ||
-                      "warning"
-                    }
-                  >
-                    {order.status}
-                  </SeverityPill>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Box>
-    </PerfectScrollbar>
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "flex-end",
-        p: 2,
-      }}
+const TrajetsDetailsModal = (props) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+  useEffect(() => {
+    if (props.showModal) {
+      setShow(true);
+    }
+  }, [props.showModal]);
+
+  return (
+    <Modal
+      show={show}
+      onHide={handleClose}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
     >
-      <Button
-        color="primary"
-        endIcon={<ArrowRightIcon fontSize="small" />}
-        size="small"
-        variant="text"
-      >
-        View all
-      </Button>
-    </Box>
-  </Card>
-);
+      <Modal.Header closeButton>
+        <Modal.Title>Détails du trajet</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Matricule</strong> &ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>124 TN 5456 </span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Départ</strong> &ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>Sfax </span>
+        </div>
+
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Arrivée</strong> &ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>Sousse </span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Date</strong> &ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>10/09/2022</span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Distance</strong> &ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>138.6 km</span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Carburant</strong> &ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>11.09 L</span>
+        </div>
+
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Vitesse maximale</strong>&ensp;&ensp;&ensp;&ensp;
+          <span style={{ float: "right", marginRight: "35%" }}>128 km/h </span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Température Ext</strong>&ensp;&ensp;&ensp;&ensp;{" "}
+          <span style={{ float: "right", marginRight: "35%" }}>31 °C</span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Taux initial du carburant</strong>&ensp;&ensp;&ensp;&ensp;{" "}
+          <span style={{ float: "right", marginRight: "35%" }}>83%</span>
+        </div>
+        <div style={{ marginLeft: "25%" }}>
+          <strong>Taux final du carburant</strong>&ensp;&ensp;&ensp;&ensp;{" "}
+          <span style={{ float: "right", marginRight: "35%" }}>23%</span>
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Fermer
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
+export const MesTrajets = (props) => {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <>
+      <TrajetsDetailsModal showModal={showModal} />
+      <Card {...props}>
+        <CardHeader title="Mes trajets" />
+        <PerfectScrollbar>
+          <Box sx={{ minWidth: 800 }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Matricule</TableCell>
+                  <TableCell>Depart</TableCell>
+                  <TableCell>Arrivée</TableCell>
+                  <TableCell>Distance (en km)</TableCell>
+                  <TableCell>Carburant (en L)</TableCell>
+                  <TableCell>Date</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {orders.map((order) => (
+                  <TableRow hover key={order.id} onClick={() => setShowModal(true)}>
+                    <TableCell>{order.matricule}</TableCell>
+                    <TableCell>{order.depart}</TableCell>
+                    <TableCell>{order.arrivee}</TableCell>
+                    <TableCell>{order.distance}</TableCell>
+                    <TableCell>{order.carburant}</TableCell>
+                    <TableCell>{order.date}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Box>
+        </PerfectScrollbar>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            p: 2,
+          }}
+        >
+          <Button
+            color="primary"
+            endIcon={<ArrowRightIcon fontSize="small" />}
+            size="small"
+            variant="text"
+          >
+            View all
+          </Button>
+        </Box>
+      </Card>
+    </>
+  );
+};

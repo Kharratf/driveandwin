@@ -1,7 +1,8 @@
 import { Avatar, Card, CardContent, Grid, Typography } from '@mui/material';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import SpeedIcon from '@mui/icons-material/Speed';
 
-export const TotalProfit = (props) => (
+export const MaxSpeed = (props) => (
   <Card {...props}>
     <CardContent>
       <Grid
@@ -15,13 +16,13 @@ export const TotalProfit = (props) => (
             gutterBottom
             variant="overline"
           >
-            TOTAL PROFIT
+            Max Speed/ {new Date().toLocaleString('en-US', {month: 'long'})}
           </Typography>
           <Typography
             color="textPrimary"
             variant="h4"
           >
-            $23k
+            142Km/h
           </Typography>
         </Grid>
         <Grid item>
@@ -32,7 +33,7 @@ export const TotalProfit = (props) => (
               width: 56
             }}
           >
-            <AttachMoneyIcon />
+            <SpeedIcon   />
           </Avatar>
         </Grid>
       </Grid>
