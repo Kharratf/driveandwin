@@ -19,24 +19,19 @@ const Login = () => {
       password: Yup.string().max(255).required("Password is required"),
     }),
     onSubmit: () => {
-      try {
-        console.log(JSON.stringify(formik.values));
-        fetch("http://localhost/driveWin/project_pfe/api/v1/login", {
-          method: "POST",
-          body: JSON.stringify(formik.values),
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }).then(function (response) {
-          response.json().then(function (resp) {
-            console.log(resp);
-          });
+      fetch("http://localhost/driveWin/project_pfe/api/v1/register", {
+        method: "POST",
+        body: JSON.stringify(formik.values),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }).then(function (response) {
+        response.json().then(function (resp) {
+          console.log(resp);
         });
-      } catch (err) {
-        console.log(err);
-      }
-      // Router.push("/").catch(console.error);
+      });
+      Router.push("/").catch(console.error);
     },
   });
 
