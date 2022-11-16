@@ -19,6 +19,18 @@ const Login = () => {
       password: Yup.string().max(255).required("Password is required"),
     }),
     onSubmit: () => {
+      fetch("http://localhost/driveWin/project_pfe/api/v1/register", {
+        method: "POST",
+        body: JSON.stringify(formik.values),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }).then(function (response) {
+        response.json().then(function (resp) {
+          console.log(resp);
+        });
+      });
       Router.push("/").catch(console.error);
     },
   });
