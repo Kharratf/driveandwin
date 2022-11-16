@@ -11,7 +11,7 @@ import {
 import { Search as SearchIcon } from "../../icons/search";
 import { Upload as UploadIcon } from "../../icons/upload";
 import { Download as DownloadIcon } from "../../icons/download";
-
+import { ModalAddTrajet } from "./modal";
 export const TrajetListToolbar = (props) => (
   <Box {...props}>
     <Box
@@ -26,16 +26,14 @@ export const TrajetListToolbar = (props) => (
       <Typography sx={{ m: 1 }} variant="h4">
         Trajets
       </Typography>
-      <Box sx={{ m: 1 }}>
+      <Box style={{ display: "flex" }} sx={{ m: 1 }}>
         <Button startIcon={<UploadIcon fontSize="small" />} sx={{ mr: 1 }}>
           Import
         </Button>
         <Button startIcon={<DownloadIcon fontSize="small" />} sx={{ mr: 1 }}>
           Export
         </Button>
-        <Button color="primary" variant="contained">
-          Ajouter Trajets
-        </Button>
+        <ModalAddTrajet />
       </Box>
     </Box>
     <Box sx={{ mt: 3 }}>
