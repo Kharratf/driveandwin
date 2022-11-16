@@ -15,7 +15,8 @@ import { Users as UsersIcon } from "../icons/users";
 import { XCircle as XCircleIcon } from "../icons/x-circle";
 import { Logo } from "./logo";
 import { NavItem } from "./nav-item";
-
+import RouteIcon from "@mui/icons-material/Route";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 const items = [
   {
     href: "/",
@@ -23,14 +24,19 @@ const items = [
     title: "Dashboard",
   },
   {
-    href: "/customers",
+    href: "/conducteurs",
     icon: <UsersIcon fontSize="small" />,
     title: "liste des conducteurs",
   },
   {
-    href: "/products",
-    icon: <ShoppingBagIcon fontSize="small" />,
-    title: "Products",
+    href: "/voitures",
+    icon: <DirectionsCarIcon fontSize="small" />,
+    title: "liste des voitures",
+  },
+  {
+    href: "/trajets",
+    icon: <RouteIcon fontSize="small" />,
+    title: "liste des trajets",
   },
   {
     href: "/account",
@@ -41,11 +47,6 @@ const items = [
     href: "/settings",
     icon: <CogIcon fontSize="small" />,
     title: "paramètres",
-  },
-  {
-    href: "/404",
-    icon: <XCircleIcon fontSize="small" />,
-    title: "Error",
   },
 ];
 
