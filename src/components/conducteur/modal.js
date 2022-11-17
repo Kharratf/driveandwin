@@ -28,45 +28,47 @@ export const ModalAddConducteur = (args) => {
           <Form>
             <FormGroup>
               <Label for="exampleEmail">Nom et Prénom Conducteur</Label>
-              <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
+              <Input id="exampleEmail" name="email" placeholder="Nom et Prénom " type="text" />
             </FormGroup>
             <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
+              <Label for="exampleEmail">Adresse mail</Label>
+              <Input id="exampleEmail" name="email" placeholder="Email" type="email" />
             </FormGroup>
             <Label for="examplePassword">Mot de passe</Label>
             <Input
               id="examplePassword"
               name="password"
-              placeholder="password placeholder"
+              placeholder="mot de passe"
               type="password"
             />
             <Label for="examplePassword">Vérifier mot de passe</Label>
             <Input
               id="examplePassword"
               name="password"
-              placeholder="password placeholder"
+              placeholder="mot de passe"
               type="password"
             />
             <FormGroup>
               <Label for="exampleEmail">Numero de télèphone</Label>
-              <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
+              <Input id="exampleEmail" name="email" placeholder="+216" type="email" />
             </FormGroup>
+            <FormGroup tag="fieldset">
+              <legend>Voiture Attribuée</legend>
+              <FormGroup check>
+                <Input name="radio1" type="radio" />
+                <Label check>Renault megane 73 TN 3294</Label>
+              </FormGroup>
+              <FormGroup check disabled>
+                <Input disabled name="radio1" type="radio" />
+                <Label check>Renault clio 124 TN 5456</Label>
+              </FormGroup>
+              <FormGroup check>
+                <Input name="radio1" type="radio" /> <Label check>Peugeot 124 TN 5456</Label>
+              </FormGroup>
+              <FormGroup check disabled>
+                <Input disabled name="radio1" type="radio" /> <Label check>Dacia 185 TN 8585</Label>
+              </FormGroup>
 
-
-            <FormGroup>
-              <Label for="exampleSelectMulti">Select Multiple</Label>
-              <Input id="exampleSelectMulti" multiple name="selectMulti" type="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleText">Text Area</Label>
-              <Input id="exampleText" name="text" type="textarea" />
             </FormGroup>
             <FormGroup>
               <Label for="exampleFile">CIN </Label>
@@ -74,25 +76,26 @@ export const ModalAddConducteur = (args) => {
 
             </FormGroup>
             <FormGroup tag="fieldset">
-              <legend>Radio Buttons</legend>
+              <legend>Adresse</legend>
               <FormGroup check>
-                <Input name="radio1" type="radio" />{" "}
-                <Label check>Option one is this and that—be sure to include why it‘s great</Label>
+                <Input name="radio1" type="radio" /> <Label check>Tunis,Tunisie</Label>
               </FormGroup>
               <FormGroup check>
-                <Input name="radio1" type="radio" />{" "}
-                <Label check>
-                  Option two can be something else and selecting it will deselect option one
-                </Label>
+                <Input name="radio1" type="radio" /> <Label check>Sfax,Tunisie </Label>
               </FormGroup>
               <FormGroup check disabled>
-                <Input disabled name="radio1" type="radio" />{" "}
-                <Label check>Option three is disabled</Label>
+                <Input disabled name="radio1" type="radio" /> <Label check>Sousse,Tunisie</Label>
+              </FormGroup>
+              <FormGroup check disabled>
+                <Input disabled name="radio1" type="radio" /> <Label check>Gabes,Tunisie</Label>
+              </FormGroup>
+              <FormGroup check disabled>
+                <Input disabled name="radio1" type="radio" /> <Label check>Nabeul,Tunisie</Label>
               </FormGroup>
             </FormGroup>
-            <FormGroup check>
+            {/* <FormGroup check>
               <Input type="checkbox" /> <Label check>Check me out</Label>
-            </FormGroup>
+            </FormGroup> */}
             {/* <Button>Submit</Button> */}
          </Form>
         </ModalBody>
