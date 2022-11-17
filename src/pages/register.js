@@ -24,7 +24,7 @@ const Register = () => {
       password: "",
       // gender: "male",
       dateBirth: "",
-      address: "",
+      phone: "",
       permis: "",
       // policy: false,
     },
@@ -35,7 +35,7 @@ const Register = () => {
       password: Yup.string().max(255).required("Password is required"),
       // gender: "",
       dateBirth: Yup.date(),
-      address: Yup.string().max(255),
+      phone: Yup.string().max(255),
       permis: Yup.string().max(255).required("Password is required"),
       // policy: Yup.boolean().oneOf([true], "This field must be checked"),
     }),
@@ -119,7 +119,7 @@ const Register = () => {
               error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
               helperText={formik.touched.email && formik.errors.email}
-              label="Email Address"
+              label="Email phone"
               margin="normal"
               name="email"
               onBlur={formik.handleBlur}
@@ -155,16 +155,16 @@ const Register = () => {
               variant="outlined"
             />
             <TextField
-              error={Boolean(formik.touched.address && formik.errors.address)}
+              error={Boolean(formik.touched.phone && formik.errors.phone)}
               fullWidth
-              helperText={formik.touched.address && formik.errors.address}
-              label="address"
+              helperText={formik.touched.phone && formik.errors.phone}
+              label="phone"
               margin="normal"
-              name="address"
+              name="phone"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              type="address"
-              value={formik.values.address}
+              type="phone"
+              value={formik.values.phone}
               variant="outlined"
             />
             <TextField
