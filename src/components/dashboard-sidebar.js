@@ -110,7 +110,7 @@ export const DashboardSidebar = (props) => {
             >
               <div>
                 <Typography color="neutral.400" variant="body2">
-                  Mohamed Location Groupe
+                  Mohamed Sahnoun
                 </Typography>
               </div>
               {/* <SelectorIcon

@@ -26,15 +26,6 @@ export const TrajetListToolbar = (props) => (
       <Typography sx={{ m: 1 }} variant="h4">
         Trajets
       </Typography>
-      <Box style={{ display: "flex" }} sx={{ m: 1 }}>
-        <Button startIcon={<UploadIcon fontSize="small" />} sx={{ mr: 1 }}>
-          Import
-        </Button>
-        <Button startIcon={<DownloadIcon fontSize="small" />} sx={{ mr: 1 }}>
-          Export
-        </Button>
-        <ModalAddTrajet />
-      </Box>
     </Box>
     <Box sx={{ mt: 3 }}>
       <Card>
