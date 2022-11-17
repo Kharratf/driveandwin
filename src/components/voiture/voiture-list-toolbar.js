@@ -51,7 +51,7 @@ export const VoitureListToolbar = (props) => (
                   </InputAdornment>
                 ),
               }}
-              placeholder="Search voiture"
+              placeholder="Search..."
               variant="outlined"
             />
           </Box>

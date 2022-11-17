@@ -16,7 +16,7 @@ import {
   Typography,
 } from "@mui/material";
 import { getInitials } from "../../utils/get-initials";
-
+import DeleteIcon from "@mui/icons-material/Delete";
 export const CustomerListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
@@ -69,22 +69,12 @@ export const CustomerListResults = ({ customers, ...rest }) => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell padding="checkbox">
-                  <Checkbox
-                    checked={selectedCustomerIds.length === customers.length}
-                    color="primary"
-                    indeterminate={
-                      selectedCustomerIds.length > 0 &&
-                      selectedCustomerIds.length < customers.length
-                    }
-                    onChange={handleSelectAll}
-                  />
-                </TableCell>
                 <TableCell>Nom</TableCell>
                 <TableCell>Email</TableCell>
                 <TableCell>adresse</TableCell>
                 <TableCell>Numéro de téléphone</TableCell>
                 <TableCell>Enregistrement</TableCell>
+                <TableCell padding="checkbox"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -94,13 +84,6 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                   key={customer.id}
                   selected={selectedCustomerIds.indexOf(customer.id) !== -1}
                 >
-                  <TableCell padding="checkbox">
-                    <Checkbox
-                      checked={selectedCustomerIds.indexOf(customer.id) !== -1}
-                      onChange={(event) => handleSelectOne(event, customer.id)}
-                      value="true"
-                    />
-                  </TableCell>
                   <TableCell>
                     <Box
                       sx={{
@@ -122,6 +105,9 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                   </TableCell>
                   <TableCell>{customer.phone}</TableCell>
                   <TableCell>{format(customer.createdAt, "dd/MM/yyyy")}</TableCell>
+                  <TableCell padding="checkbox">
+                    <DeleteIcon />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

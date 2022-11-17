@@ -16,6 +16,7 @@ import {
   Typography,
 } from "@mui/material";
 import { getInitials } from "../../utils/get-initials";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const TrajetListResults = ({ trajets, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
@@ -75,6 +76,7 @@ export const TrajetListResults = ({ trajets, ...rest }) => {
                 <TableCell>Arrivée</TableCell>
                 <TableCell>Distance</TableCell>
                 <TableCell>Date</TableCell>
+                <TableCell padding="checkbox"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -104,6 +106,9 @@ export const TrajetListResults = ({ trajets, ...rest }) => {
                   <TableCell>{customer.arrivee}</TableCell>
                   <TableCell>{customer.distance}</TableCell>
                   <TableCell>{customer.date}</TableCell>
+                  <TableCell padding="checkbox">
+                    <DeleteIcon />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

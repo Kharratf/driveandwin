@@ -16,6 +16,7 @@ import {
   Typography,
 } from "@mui/material";
 import { getInitials } from "../../utils/get-initials";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const VoitureListResults = ({ voitures, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
@@ -72,6 +73,7 @@ export const VoitureListResults = ({ voitures, ...rest }) => {
                 <TableCell>MARQUE</TableCell>
                 <TableCell>MATRICULE</TableCell>
                 <TableCell>MODELE</TableCell>
+                <TableCell padding="checkbox"></TableCell>{" "}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -99,6 +101,9 @@ export const VoitureListResults = ({ voitures, ...rest }) => {
                   <TableCell>{customer.matricule}</TableCell>
 
                   <TableCell>{customer.modele}</TableCell>
+                  <TableCell padding="checkbox">
+                    <DeleteIcon />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
