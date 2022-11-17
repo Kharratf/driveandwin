@@ -53,6 +53,7 @@ export const ModalAddTrajet = (args) => {
               <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
             <FormGroup>
+
               <Label for="exampleEmail">Email</Label>
               <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
@@ -91,6 +92,7 @@ export const ModalAddTrajet = (args) => {
             </FormGroup>
             <FormGroup>
               <Label for="exampleFile">CIN</Label>
+
               <Input id="exampleFile" name="file" type="file" />
               <FormText>
                 This is some placeholder block-level help text for the above input. It‘s a bit

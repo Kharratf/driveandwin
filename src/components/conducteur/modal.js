@@ -53,6 +53,7 @@ export const ModalAddConducteur = (args) => {
               <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
 
+
             <FormGroup>
               <Label for="exampleSelectMulti">Select Multiple</Label>
               <Input id="exampleSelectMulti" multiple name="selectMulti" type="select">
@@ -70,6 +71,7 @@ export const ModalAddConducteur = (args) => {
             <FormGroup>
               <Label for="exampleFile">CIN </Label>
               <Input id="exampleFile" name="file" type="file" />
+
             </FormGroup>
             <FormGroup tag="fieldset">
               <legend>Radio Buttons</legend>
@@ -92,7 +94,7 @@ export const ModalAddConducteur = (args) => {
               <Input type="checkbox" /> <Label check>Check me out</Label>
             </FormGroup>
             {/* <Button>Submit</Button> */}
-          </Form>
+         </Form>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>
@@ -100,6 +102,7 @@ export const ModalAddConducteur = (args) => {
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Annuler le saisie
+
           </Button>
         </ModalFooter>
       </Modal>
