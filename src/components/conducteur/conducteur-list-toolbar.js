@@ -27,7 +27,7 @@ export const CustomerListToolbar = (props) => (
       <Typography sx={{ m: 1 }} variant="h4">
         Conducteurs
       </Typography>
-      <Box sx={{ m: 1 }}>
+      {/* <Box sx={{ m: 1 }}>
         <Button startIcon={<UploadIcon fontSize="small" />} sx={{ mr: 1 }}>
           Import
         </Button>
@@ -35,7 +35,7 @@ export const CustomerListToolbar = (props) => (
           Export
         </Button>
         <ModalAddConducteur />
-      </Box>
+      </Box> */}
     </Box>
     <Box sx={{ mt: 3 }}>
       <Card>
