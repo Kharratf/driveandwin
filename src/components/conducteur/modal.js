@@ -68,10 +68,12 @@ export const ModalAddConducteur = (args) => {
               <FormGroup check disabled>
                 <Input disabled name="radio1" type="radio" /> <Label check>Dacia 185 TN 8585</Label>
               </FormGroup>
+
             </FormGroup>
             <FormGroup>
               <Label for="exampleFile">CIN </Label>
               <Input id="exampleFile" name="file" type="file" />
+
             </FormGroup>
             <FormGroup tag="fieldset">
               <legend>Adresse</legend>
@@ -95,7 +97,7 @@ export const ModalAddConducteur = (args) => {
               <Input type="checkbox" /> <Label check>Check me out</Label>
             </FormGroup> */}
             {/* <Button>Submit</Button> */}
-          </Form>
+         </Form>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>
@@ -103,6 +105,7 @@ export const ModalAddConducteur = (args) => {
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Annuler le saisie
+
           </Button>
         </ModalFooter>
       </Modal>
