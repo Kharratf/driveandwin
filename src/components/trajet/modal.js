@@ -27,6 +27,33 @@ export const ModalAddTrajet = (args) => {
         <ModalBody>
           <Form>
             <FormGroup>
+              <Label for="exampleEmail">Nom et Prénom Conducteur</Label>
+              <Input id="exampleEmail" name="email" placeholder="Nom et Prenom" type="email" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="exampleEmail">Aderesse mail</Label>
+              <Input id="exampleEmail" name="email" placeholder="Email" type="email" />
+            </FormGroup>
+            <Label for="examplePassword">Mot de passe</Label>
+            <Input
+              id="examplePassword"
+              name="password"
+              placeholder="password placeholder"
+              type="password"
+            />
+            <Label for="examplePassword">Vérifier mot de passe</Label>
+            <Input
+              id="examplePassword"
+              name="password"
+              placeholder="password placeholder"
+              type="password"
+            />
+            <FormGroup>
+              <Label for="exampleEmail">Numero de télèphone</Label>
+              <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
+            </FormGroup>
+            <FormGroup>
+
               <Label for="exampleEmail">Email</Label>
               <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
@@ -64,7 +91,8 @@ export const ModalAddTrajet = (args) => {
               <Input id="exampleText" name="text" type="textarea" />
             </FormGroup>
             <FormGroup>
-              <Label for="exampleFile">File</Label>
+              <Label for="exampleFile">CIN</Label>
+
               <Input id="exampleFile" name="file" type="file" />
               <FormText>
                 This is some placeholder block-level help text for the above input. It‘s a bit

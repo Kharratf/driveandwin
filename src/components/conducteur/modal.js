@@ -27,28 +27,33 @@ export const ModalAddConducteur = (args) => {
         <ModalBody>
           <Form>
             <FormGroup>
-              <Label for="exampleEmail">Email</Label>
+              <Label for="exampleEmail">Nom et Prénom Conducteur</Label>
               <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
             <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input
-                id="examplePassword"
-                name="password"
-                placeholder="password placeholder"
-                type="password"
-              />
+              <Label for="exampleEmail">Email</Label>
+              <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
+            <Label for="examplePassword">Mot de passe</Label>
+            <Input
+              id="examplePassword"
+              name="password"
+              placeholder="password placeholder"
+              type="password"
+            />
+            <Label for="examplePassword">Vérifier mot de passe</Label>
+            <Input
+              id="examplePassword"
+              name="password"
+              placeholder="password placeholder"
+              type="password"
+            />
             <FormGroup>
-              <Label for="exampleSelect">Select</Label>
-              <Input id="exampleSelect" name="select" type="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
+              <Label for="exampleEmail">Numero de télèphone</Label>
+              <Input id="exampleEmail" name="email" placeholder="with a placeholder" type="email" />
             </FormGroup>
+
+
             <FormGroup>
               <Label for="exampleSelectMulti">Select Multiple</Label>
               <Input id="exampleSelectMulti" multiple name="selectMulti" type="select">
@@ -64,12 +69,9 @@ export const ModalAddConducteur = (args) => {
               <Input id="exampleText" name="text" type="textarea" />
             </FormGroup>
             <FormGroup>
-              <Label for="exampleFile">File</Label>
+              <Label for="exampleFile">CIN </Label>
               <Input id="exampleFile" name="file" type="file" />
-              <FormText>
-                This is some placeholder block-level help text for the above input. It‘s a bit
-                lighter and easily wraps to a new line.
-              </FormText>
+
             </FormGroup>
             <FormGroup tag="fieldset">
               <legend>Radio Buttons</legend>
@@ -91,15 +93,16 @@ export const ModalAddConducteur = (args) => {
             <FormGroup check>
               <Input type="checkbox" /> <Label check>Check me out</Label>
             </FormGroup>
-            <Button>Submit</Button>
-          </Form>
+            {/* <Button>Submit</Button> */}
+         </Form>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>
-            Do Something
+            Créer un compte
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
-            Cancel
+            Annuler le saisie
+
           </Button>
         </ModalFooter>
       </Modal>
